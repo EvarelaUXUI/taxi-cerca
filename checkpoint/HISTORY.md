@@ -1,0 +1,23 @@
+# Bitácora
+
+Formato: `AAAA-MM-DD · tipo · qué pasó · por qué`. Los tipos son decisión, avance, cambio, arreglo, hallazgo y descartado. Lo más nuevo va arriba.
+
+- **2026-10-14 · avance** · **Flujo completo probado en doble vista** (Chrome + Puppeteer): conectar taxista → elegir Hospital General → Pedir Taxi ($40–$45) → oferta con anillo de 15 s → aceptar → taxi avanza por la calle en los dos celulares → "Tu taxi llegó" / "Esperando a Mariana" → Iniciar viaje → avance y hora de llegada → "Cobra $40" → Terminar viaje → calificaciones. Las ganancias suben de $420 a $460 y los viajes de 6 a 7. Sin errores en consola.
+- **2026-10-14 · arreglo** · El taxista veía "Recoger en Mi ubicación". Ahora la recogida se llama por su calle (Calle Santos Mercado Valdez) y solo el pasajero la ve como "Mi ubicación". · Visto en la prueba.
+- **2026-10-14 · arreglo** · Pin del pasajero tapado por el panel en Inicio: `fitMapTo` con un solo punto ahora encuadra una caja de ~600 m, así el padding aplica y el pin queda arriba del panel. Texto del buscador acortado a "Busca un lugar" en una línea.
+- **2026-10-14 · arreglo** · Error "Null check" al tocar Pedir Taxi: el panel de Confirmar se seguía reconstruyendo mientras salía con la animación y el borrador ya no tenía destino. Ahora el borrador no se limpia al pedir (se limpia con `reset()` al cerrar el viaje) y el panel tolera no tener destino.
+- **2026-10-14 · hallazgo** · Primera prueba de la doble vista en Chrome (Puppeteer): inicio, búsqueda y confirmar funcionan con ruta real de OSRM y precio estimado ($40–$45 al Hospital General). Al tocar "Pedir Taxi" sale un error "Null check operator used on a null value" en consola. Detalles visuales: el pin del pasajero queda medio tapado por el panel y el texto del buscador se parte en 2 líneas. · Prueba de punta a punta antes de entregar.
+- **2026-10-14 · cambio** · Documentación base escrita: SPEC, AGENTS, CLAUDE, ARQUITECTURA, DESIGN_SYSTEM, un archivo por componente y `checkpoint/`. · Edgar lo pidió desde el inicio; se había dejado para el final del plan y debió ir primero.
+- **2026-10-14 · decisión** · Commits y push **sin ninguna mención a Claude**. Repo: `https://github.com/EvarelaUXUI/taxi-cerca`. · Pedido de Edgar.
+- **2026-10-14 · decisión** · Ninguna mención a otros proyectos en código ni docs. · Pedido de Edgar.
+- **2026-10-14 · avance** · Apps `demo` (doble vista + selector de rol, rutas `/`, `/pasajero`, `/taxista`), `pasajero` y `taxista`. Cada celular de la doble vista tiene su propio `Navigator` y `ScaffoldMessenger` para que diálogos y avisos no se mezclen. Compila para web.
+- **2026-10-14 · avance** · Paquetes `tc_rider` y `tc_driver` con todos los pasos del viaje. La oferta del taxista entra desde abajo con anillo de 15 s y prioriza precio → recogida → destino → pasajero.
+- **2026-10-14 · avance** · `tc_maps`: mapa OSM desaturado (para que resalte el amarillo; invertido en oscuro), pines de taxi con rumbo, recogida, destino y ubicación con halo; ruta con borde de marca y tramo punteado.
+- **2026-10-14 · avance** · `tc_design_system`: tokens en 3 capas y 19 componentes. Contrastes verificados: negro sobre amarillo 11.6:1, texto secundario 5.4:1. El verde de éxito pasa de `#1E8E4E` (4.17:1, no pasa AA) a `#187A42`.
+- **2026-10-14 · decisión** · Tipografía **Lexend** (títulos y cifras) + **Source Sans 3** (texto), recomendada por la skill ui-ux-pro-max por legibilidad. Su paleta sugerida (azul/pizarra) se descartó: la marca es amarillo taxi.
+- **2026-10-14 · avance** · `tc_core`: modelos, tarifas, rutas OSRM con respaldo, `TripRepository` y `SimulatedTripRepository` con reloj propio. 14 pruebas en verde al primer intento.
+- **2026-10-14 · decisión** · El `RouteService` vive en `tc_core` y no en `tc_maps` (como decía el plan) porque el simulador también lo necesita para mover los taxis.
+- **2026-10-14 · decisión** · Pueblo: **Ixtlahuaca, Estado de México**. 11 lugares reales geocodificados con Nominatim (Centro, Mercado, Terminal, Hospital General, CUI, San Francisco de Asís, Santo Domingo de Guzmán, Emiliano Zapata, Unidad Deportiva, San Pedro de los Baños, Tecnológico de Jocotitlán). · Elección de Edgar.
+- **2026-10-14 · decisión** · **Monorepo con pub workspaces** y pasajero/taxista como paquetes independientes, más apps `pasajero` y `taxista` que ya compilan solas. · Edgar: "cuando ya se haga oficial, que sea fácil separarlo".
+- **2026-10-14 · decisión** · Riverpod 3 + go_router 18 + flutter_map 8 (OSM, sin API key) + OSRM. Modelos a mano sin codegen. · Escalable, sin llaves para la demo y sin build_runner.
+- **2026-10-14 · avance** · Flutter 3.47.7 instalado con Homebrew. No hay Xcode ni Android SDK: la demo corre en web (Chrome).

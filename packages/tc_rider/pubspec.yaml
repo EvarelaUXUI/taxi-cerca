@@ -1,0 +1,24 @@
+name: tc_rider
+description: "Experiencia del pasajero de Taxi Cerca."
+version: 0.1.0
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.13.0
+  flutter: ">=3.47.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^3.4.3
+  latlong2: ^0.10.1
+  intl: ^0.20.3
+  tc_core: any
+  tc_maps: any
+  tc_design_system: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0

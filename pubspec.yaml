@@ -1,0 +1,19 @@
+name: taxi_cerca_workspace
+description: "Monorepo de Taxi Cerca (apps y paquetes compartidos)."
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+workspace:
+  - apps/demo
+  - apps/pasajero
+  - apps/taxista
+  - packages/tc_design_system
+  - packages/tc_core
+  - packages/tc_maps
+  - packages/tc_rider
+  - packages/tc_driver
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
