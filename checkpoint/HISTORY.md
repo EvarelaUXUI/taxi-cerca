@@ -2,6 +2,7 @@
 
 Formato: `AAAA-MM-DD · tipo · qué pasó · por qué`. Los tipos son decisión, avance, cambio, arreglo, hallazgo y descartado. Lo más nuevo va arriba.
 
+- **2026-10-14 · avance** · Primer push a GitHub (`main`, commit `01a21ab`). Identidad de git configurada solo para este repo (Edgar Varela). Sin mención a Claude en commits. · Pedido de Edgar.
 - **2026-10-14 · avance** · **Flujo completo probado en doble vista** (Chrome + Puppeteer): conectar taxista → elegir Hospital General → Pedir Taxi ($40–$45) → oferta con anillo de 15 s → aceptar → taxi avanza por la calle en los dos celulares → "Tu taxi llegó" / "Esperando a Mariana" → Iniciar viaje → avance y hora de llegada → "Cobra $40" → Terminar viaje → calificaciones. Las ganancias suben de $420 a $460 y los viajes de 6 a 7. Sin errores en consola.
 - **2026-10-14 · arreglo** · El taxista veía "Recoger en Mi ubicación". Ahora la recogida se llama por su calle (Calle Santos Mercado Valdez) y solo el pasajero la ve como "Mi ubicación". · Visto en la prueba.
 - **2026-10-14 · arreglo** · Pin del pasajero tapado por el panel en Inicio: `fitMapTo` con un solo punto ahora encuadra una caja de ~600 m, así el padding aplica y el pin queda arriba del panel. Texto del buscador acortado a "Busca un lugar" en una línea.

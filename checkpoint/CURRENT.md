@@ -1,10 +1,10 @@
 # Estado actual
 
 **Última actualización:** 2026-10-14
-**Fase:** F0–F4 listas y probadas de punta a punta en web · siguiente: Edgar prueba en localhost, primer push y revisión de diseño
+**Fase:** F0–F4 listas y probadas de punta a punta en web · en GitHub · siguiente: feedback de Edgar en localhost y revisión de diseño
 
 ## Dónde estamos
-- **Repo:** `https://github.com/EvarelaUXUI/taxi-cerca`. Commits en español y **sin mención a Claude**.
+- **Repo:** `https://github.com/EvarelaUXUI/taxi-cerca`, rama `main` publicada. Commits en español y **sin mención a Claude**.
 - **Monorepo** con pub workspaces: `apps/demo`, `apps/pasajero`, `apps/taxista` + `packages/tc_design_system`, `tc_core`, `tc_maps`, `tc_rider`, `tc_driver`. `dart analyze` en 0 avisos.
 - **Pruebas:** `packages/tc_core` 14 en verde (tarifas, formatos, cursor de ruta y 7 escenarios del simulador).
 - **Demo web probada en doble vista** con Puppeteer: el viaje completo funciona (pedir → oferta → aceptar → llegada → viaje → cobro → calificaciones; ganancias $420 → $460).
@@ -21,10 +21,9 @@ Pantalla ancha (≥ 900 px) = dos celulares lado a lado. Celular o ventana angos
 
 ## Siguiente paso concreto
 1. Edgar prueba en `http://localhost:8790` (laptop y ventana angosta) y da feedback.
-2. Primer commit y push a GitHub.
-3. Prueba de widget de `apps/demo` y guardar la prueba e2e de Puppeteer en el repo.
-4. Revisión de diseño con `emil-design-eng` y `ux-design-auditor`; ícono de la app.
-5. CI en GitHub Actions y publicar la demo web.
+2. Prueba de widget de `apps/demo` y guardar la prueba e2e de Puppeteer en el repo.
+3. Revisión de diseño con `emil-design-eng` y `ux-design-auditor`; ícono de la app.
+4. CI en GitHub Actions y publicar la demo web.
 
 ## Bloqueos y decisiones pendientes
 - Sin Xcode ni Android Studio no se puede probar en celular nativo (solo web).

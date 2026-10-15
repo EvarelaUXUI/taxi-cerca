@@ -7,7 +7,7 @@ Se marca `[x]` al terminar y se registra en `HISTORY.md`.
 - [x] P0 · Instalar Flutter (Homebrew) y crear el monorepo con pub workspaces: 3 apps y 5 paquetes
 - [x] P0 · `analysis_options.yaml` estricto compartido (strict-casts, strict-inference, comillas simples, comas finales…)
 - [x] P0 · Documentación base: SPEC, AGENTS, CLAUDE, ARQUITECTURA, DESIGN_SYSTEM, componentes y checkpoint
-- [ ] P0 · Repo en GitHub (`EvarelaUXUI/taxi-cerca`) con primer commit
+- [x] P0 · Repo en GitHub (`EvarelaUXUI/taxi-cerca`) con primer commit
 - [ ] P1 · CI en GitHub Actions: `dart analyze` + `flutter test` en cada push
 - [ ] P1 · Publicar la demo web (GitHub Pages, Cloudflare Pages o Vercel)
 - [ ] P1 · Instalar Android Studio y Xcode; correr en Android e iPhone reales
